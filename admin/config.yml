@@ -3,7 +3,7 @@ backend:
   branch: main
 
 # تست لوکال
-local_backend: true
+local_backend: false
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
