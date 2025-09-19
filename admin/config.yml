@@ -1,0 +1,58 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# تست لوکال
+local_backend: true
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+locale: "fa"
+
+collections:
+  - name: "menu"
+    label: "منو"
+    label_singular: "آیتم"
+    format: "json"
+    extension: "json"
+    editor:
+      preview: false
+    files:
+      - file: "data/menu.json"
+        label: "لیست منو"
+        name: "menu_items"
+        fields:
+          - label: "آیتم‌ها"
+            name: "items"
+            widget: "list"
+            collapsed: false
+            fields:
+              - { label: "نام", name: "name", widget: "string" }
+              - { label: "توضیح", name: "desc", widget: "string", required: false }
+              - { label: "قیمت (تومان)", name: "price", widget: "number", value_type: "int", min: 0 }
+              - { label: "عکس", name: "img", widget: "image", required: false }
+              - { label: "نمایش در منوی منتخب", name: "featured", widget: "boolean", default: false }
+              - label: "دسته‌بندی"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "صبحانه", value: "breakfast" }
+                  - { label: "قهوه گرم", value: "hot" }
+                  - { label: "قهوه سرد", value: "cold" }
+                  - { label: "اسموتی", value: "smoothie" }
+                  - { label: "نوشیدنی", value: "drinks" }
+                  - { label: "پیش‌غذا", value: "appetizer" }
+                  - { label: "ساندویچ", value: "sandwich" }
+                  - { label: "غذای اصلی", value: "main" }
+                  - { label: "قلیان", value: "hookah" }
+
+  - name: "settings"
+    label: "تنظیمات"
+    files:
+      - file: "data/settings.json"
+        label: "تنظیمات کلی"
+        name: "site_settings"
+        fields:
+          - { label: "لینک Google Maps", name: "mapsUrl", widget: "string", required: false }
+          - { label: "ساعات کاری", name: "hours", widget: "string", required: false }

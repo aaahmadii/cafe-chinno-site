@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>پنل مدیریت | منو</title>
+
+  <!-- بگو CMS خودش خودکار اجرا نشه -->
+  <script>window.CMS_MANUAL_INIT = true;</script>
+
+  <!-- اسکریپت Decap CMS -->
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.3.1/dist/decap-cms.js"></script>
+</head>
+<body>
+  <!-- محل mount -->
+  <div id="nc-root"></div>
+
+  <!-- اجرای دستی بعد از اینکه DOM کامل آماده شد -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.CMS) {
+        CMS.init();
+      }
+    });
+  </script>
+</body>
+</html>

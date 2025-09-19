@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>کافه چینو | صفحهٔ اصلی</title>
+  <meta name="description" content="صفحهٔ اصلی مینیمال و زیبا برای کافه؛ اسلایدشو، منو، مکان‌یابی، درباره ما. واکنش‌گرا و سریع." />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#17bebb', // سبز فیروزه‌ای
+            primaryDark: '#12a7a8',
+            muted: '#f7f7f7'
+          },
+          fontFamily: {
+            sans: ['Vazirmatn', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Arial']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Vazirmatn font (FA) -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Swiper (slider) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* بهبود رندر فونت فارسی */
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- ===== Header / Navbar ===== -->
+  <header class="sticky top-0 z-40 border-b border-gray-100 bg-white/80 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo (بالا-چپ در RTL یعنی سمت شروع) -->
+        <a href="#top" class="flex items-center gap-3 group" aria-label="خانه">
+          <!-- TODO: مسیر لوگو را عوض کنید -->
+          <img src="/assets/brand.jpeg" alt="کافه چینو" class="h-12 w-auto object-contain">
+          <span class="text-lg font-extrabold tracking-tight group-hover:text-primary transition-colors">کافه چینو</span>
+        </a>
+
+        <!-- Nav (desktop) -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="menu.html" class="hover:text-primary transition-colors">منو</a>
+          <button id="goMapsTop" class="hover:text-primary transition-colors">مکان‌یابی</button>
+          <a href="#about" class="hover:text-primary transition-colors">درباره</a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="mobileBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-xl border border-gray-200 hover:bg-muted" aria-label="باز کردن منو">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-100 bg-white">
+      <div class="px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="menu.html" class="py-2">منو</a>
+        <button id="goMapsMobile" class="py-2 text-left">مکان‌یابی</button>
+        <a href="#about" class="py-2">درباره</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero / Slider ===== -->
+  <!-- ===== Hero / Slider ===== -->
+<section id="top" class="relative">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="/assets/slide1.png" alt="اسلاید 1" class="w-full h-[60vh] sm:h-[70vh] object-cover">
+      </div>
+      <div class="swiper-slide">
+        <img src="/assets/slide2.png" alt="اسلاید 2" class="w-full h-[60vh] sm:h-[70vh] object-cover">
+      </div>
+      <div class="swiper-slide">
+        <img src="/assets/slide3.jpg" alt="اسلاید 3" class="w-full h-[60vh] sm:h-[70vh] object-cover">
+      </div>
+    </div>
+    <!-- pagination & arrows -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+
+    <!-- CTA buttons overlay -->
+    
+  <!-- ===== Quick Actions Section (Menu & Location) ===== -->
+  <section class="py-10 sm:py-12 bg-muted">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="menu.html" class="group rounded-2xl border border-gray-200 bg-white p-5 flex items-center justify-between hover:border-primary transition-colors">
+          <div class="flex items-center gap-4">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <i class="fa-solid fa-mug-hot text-2xl"></i>
+            </span>
+            <div>
+              <h3 class="font-bold">منوی کافه</h3>
+              <p class="text-sm text-gray-500">قهوه‌ها، نوشیدنی‌ها و دسرها</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-angle-left text-gray-400 group-hover:text-primary"></i>
+        </a>
+
+        <a href="https://maps.app.goo.gl/s8PcTs1Hnda838jJ9?g_st=ic" target="_blank"
+      class="group rounded-2xl border border-gray-200 bg-white p-5 flex items-center justify-between hover:border-primary transition-colors">
+      <div class="flex items-center gap-4">
+      <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+      <i class="fa-solid fa-location-dot text-2xl"></i>
+      </span>
+      <div>
+      <h3 class="font-bold">مکان‌یابی</h3>
+      <p class="text-sm text-gray-500">مسیر مستقیم در Google Maps</p>
+    </div>
+  </div>
+  <i class="fa-solid fa-angle-left text-gray-400 group-hover:text-primary"></i>
+</a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Menu (Preview) ===== -->
+  <section id="menu" class="py-12 sm:py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- هدر -->
+    <div class="flex items-end justify-between mb-6">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold">منوی منتخب</h2>
+        <p class="text-gray-500 mt-1">نمونه‌ای از آیتم‌ها</p>
+      </div>
+      <a href="/menu.html" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-white font-semibold shadow hover:bg-primaryDark transition-colors">
+        <i class="fa-solid fa-mug-saucer"></i>
+        <span>مشاهده منوی کامل</span>
+      </a>
+    </div>
+
+    <!-- ظرف کارت‌ها؛ با JS پر می‌شود -->
+    <div id="featured-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    <!-- دکمه موبایل -->
+    <div class="sm:hidden mt-6">
+      <a href="/menu.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-white font-semibold shadow hover:bg-primaryDark transition-colors">
+        <i class="fa-solid fa-mug-saucer"></i>
+        <span>منوی کامل</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ===== About ===== -->
+  <section id="about" class="py-12 sm:py-16 bg-muted">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">دربارهٔ کافه</h2>
+          <p class="leading-8 text-gray-700">
+کافه چینو با فضایی آرام و صمیمی شکل گرفته تا جای دنجی برای جمع‌های دوستانه و لحظه‌های خلوت شما باشد. ما باور داریم یک کافه خوب باید حس راحتی و صمیمیت ایجاد کند؛ جایی که بتوانید با خیال راحت قهوه‌تان را بنوشید، گفت‌وگو کنید یا فقط در سکوت، لحظه‌ای برای خودتان داشته باشید.          </p>
+          <ul class="mt-5 space-y-2 text-gray-600">
+            <li>⏰ ساعات کاری: هر روز 8 تا 24</li>
+            <li>📍آدرس: بزرگراه اشرفی اصفهانی‌بالاتر از پونک ، نبش ک یازدهم پ ۳۱۷</li>
+            <li>📞 تماس: 02144481592</li>
+            <li>📸 اینستاگرام: cafe_chinno</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-gray-200">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop" alt="نمای کافه" class="w-full h-72 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="py-8 border-t border-gray-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-500">
+        © <span id="year"></span> کافه چینو — همه حقوق محفوظ است.
+      </p>
+      <div class="flex items-center gap-3">
+        <a href="https://www.instagram.com/aaahmadi.i" target="_blank" class="text-sm hover:text-primary flex items-center gap-1">
+          <i class="fa-brands fa-instagram text-lg"></i>
+           سازنده سایت: @aaahmadi.i
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    // Init Swiper
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      autoplay: { delay: 4500, disableOnInteraction: false },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+    });
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Maps handlers — لینک مکان‌یابی گوگل را این‌جا تغییر دهید
+    const MAPS_URL = 'https://www.google.com/maps/dir/?api=1&destination=35.715298,51.404343'; // TODO: مختصات/آدرس واقعی
+    const goMap = () => window.location.href = MAPS_URL;
+    document.getElementById('goMapsTop')?.addEventListener('click', goMap);
+    document.getElementById('goMapsMobile')?.addEventListener('click', goMap);
+    document.getElementById('goMapsHero')?.addEventListener('click', goMap);
+    document.getElementById('goMapsCards')?.addEventListener('click', goMap);
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+  // قالب قیمت به تومان
+  const formatToman = n => {
+    const num = Number(n || 0);
+    return new Intl.NumberFormat('fa-IR').format(num) + ' تومان';
+  };
+
+  // ساخت کارت آیتم
+  const renderCard = (item) => {
+    const imgSrc = item.img && item.img.trim()
+      ? item.img /* مثلا "/assets/uploads/latte.jpg" از CMS */
+      : 'https://dummyimage.com/600x400/f7f7f7/777&text=No+Image';
+
+    return `
+      <article class="rounded-2xl border border-gray-200 bg-white overflow-hidden hover:shadow transition">
+        <img src="${imgSrc}" alt="${item.name || ''}" class="w-full h-40 object-cover" onerror="this.src='https://dummyimage.com/600x400/f7f7f7/777&text=No+Image'">
+        <div class="p-5">
+          <h3 class="font-bold">${item.name || ''}</h3>
+          ${item.desc ? `<p class="text-sm text-gray-500 mt-1 line-clamp-2">${item.desc}</p>` : ''}
+          <div class="mt-3 font-extrabold text-primary">${formatToman(item.price)}</div>
+        </div>
+      </article>
+    `;
+  };
+
+  async function loadFeatured() {
+    try {
+      const res = await fetch('/data/menu.json', { cache: 'no-store' });
+      const data = await res.json();
+      const items = Array.isArray(data.items) ? data.items : [];
+
+      // آیتم‌هایی که در پنل «منتخب» شده‌اند
+      let featured = items.filter(i => i.featured === true);
+
+      // اگر هیچ آیتمی منتخب نبود، آخرین 3 آیتم را نشان بده
+      if (featured.length === 0) featured = items.slice(-3);
+
+      // حداکثر 3 کارت
+      featured = featured.slice(0, 3);
+
+      document.getElementById('featured-list').innerHTML =
+        featured.map(renderCard).join('') || `<div class="text-sm text-gray-500">هنوز آیتمی ثبت نشده.</div>`;
+    } catch (e) {
+      console.error(e);
+      document.getElementById('featured-list').innerHTML =
+        `<div class="text-sm text-red-500">خطا در بارگذاری منوی منتخب.</div>`;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadFeatured);
+</script>
+
+</body>
+</html>

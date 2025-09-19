@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>منوی کافه شما</title>
+  <meta name="description" content="منوی کامل کافه: صبحانه، قهوه گرم، قهوه سرد، اسموتی، نوشیدنی، پیش غذا، ساندویچ، غذای اصلی و قلیان." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#17bebb',
+            primaryDark: '#12a7a8',
+            muted: '#f7f7f7'
+          },
+          fontFamily: {
+            sans: ['Vazirmatn', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Arial']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- فونت فارسی -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- آیکون‌ها -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- ===== Header ===== -->
+  <header class="sticky top-0 z-40 border-b border-gray-100 bg-white/80 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="/assets/brand.jpeg" alt="لوگو" class="h-9 w-9 object-contain" onerror="this.src='https://dummyimage.com/80x80/17bebb/ffffff&text=☕'">
+          <span class="text-lg font-extrabold tracking-tight group-hover:text-primary transition-colors">کافه چینو</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="index.html#about" class="hover:text-primary">درباره</a>
+        </nav>
+        <button class="md:hidden inline-flex items-center justify-center p-2 rounded-xl border border-gray-200 hover:bg-muted">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero Banner (یک عکس برند) ===== -->
+  <section class="relative">
+    <img src="/assets/menu.png" alt="برند کافه" class="w-full h-[40vh] sm:h-[50vh] object-cover">
+    <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white drop-shadow-lg">منوی کافه</h1>
+    </div>
+  </section>
+
+  <!-- ===== Menu Categories (نوار اسکرول افقی با کارت‌های عمودی) ===== -->
+  <section class="py-12 sm:py-16 bg-muted">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-xl sm:text-2xl font-extrabold mb-4">دسته‌بندی‌ها</h2>
+      <p class="text-gray-600 mb-4">برای مرور دسته‌ها، روی موبایل با انگشت اسکرول افقی کنید و برای دیدن آیتم‌ها روی دسته ضربه بزنید.</p>
+      <div class="-mx-4 sm:mx-0">
+        <div class="overflow-x-auto px-4 sm:px-0">
+          <div class="flex gap-4 pb-2 snap-x snap-mandatory" id="catBar">
+            <a href="#items" data-cat="breakfast" class="snap-center min-w-[180px] rounded-2xl bg-white border border-primary/30 p-5 flex flex-col items-center text-center hover:border-primary hover:shadow transition">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-2"><i class="fa-solid fa-egg text-xl"></i></span>
+              <h3 class="font-bold">صبحانه</h3>
+            </a>
+            <a href="#items" data-cat="hot" class="snap-center min-w-[180px] rounded-2xl bg-white border border-primary/30 p-5 flex flex-col items-center text-center hover:border-primary hover:shadow transition">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-2"><i class="fa-solid fa-mug-hot text-xl"></i></span>
+              <h3 class="font-bold">قهوه گرم</h3>
+            </a>
+            <a href="#items" data-cat="cold" class="snap-center min-w-[180px] rounded-2xl bg-white border border-primary/30 p-5 flex flex-col items-center text-center hover:border-primary hover:shadow transition">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-2"><i class="fa-regular fa-snowflake text-xl"></i></span>
+              <h3 class="font-bold">قهوه سرد</h3>
+            </a>
+            <a href="#items" data-cat="smoothie" class="snap-center min-w-[180px] rounded-2xl bg-white border border-primary/30 p-5 flex flex-col items-center text-center hover:border-primary hover:shadow transition">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-2"><i class="fa-solid fa-blender text-xl"></i></span>
+              <h3 class="font-bold">اسموتی</h3>
+            </a>
+            <a href="#items" data-cat="drinks" class="snap-center min-w-[180px] rounded-2xl bg-white border border-primary/30 p-5 flex flex-col items-center text-center hover:border-primary hover:shadow transition">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-2"><i class="fa-solid fa-wine-glass text-xl"></i></span>
+              <h3 class="font-bold">نوشیدنی</h3>
+            </a>
+            <a href="#items" data-cat="appetizer" class="snap-center min-w-[180px] rounded-2xl bg-white border border-primary/30 p-5 flex flex-col items-center text-center hover:border-primary hover:shadow transition">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-2"><i class="fa-solid fa-utensils text-xl"></i></span>
+              <h3 class="font-bold">پیش‌غذا</h3>
+            </a>
+            <a href="#items" data-cat="sandwich" class="snap-center min-w-[180px] rounded-2xl bg-white border border-primary/30 p-5 flex flex-col items-center text-center hover:border-primary hover:shadow transition">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-2"><i class="fa-solid fa-burger text-xl"></i></span>
+              <h3 class="font-bold">ساندویچ</h3>
+            </a>
+            <a href="#items" data-cat="main" class="snap-center min-w-[180px] rounded-2xl bg-white border border-primary/30 p-5 flex flex-col items-center text-center hover:border-primary hover:shadow transition">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-2"><i class="fa-solid fa-drumstick-bite text-xl"></i></span>
+              <h3 class="font-bold">غذای اصلی</h3>
+            </a>
+            <a href="#items" data-cat="hookah" class="snap-center min-w-[180px] rounded-2xl bg-white border border-primary/30 p-5 flex flex-col items-center text-center hover:border-primary hover:shadow transition">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-2"><i class="fa-solid fa-smoking text-xl"></i></span>
+              <h3 class="font-bold">قلیان</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Items Viewer (نمایش آیتم‌های دسته انتخاب‌شده) ===== -->
+  <section id="items" class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2">
+          <div class="h-5 w-1.5 rounded-full bg-primary"></div>
+          <h2 id="itemsTitle" class="text-xl sm:text-2xl font-extrabold">آیتم‌ها</h2>
+        </div>
+        <span id="itemsCount" class="text-sm text-gray-500"></span>
+      </div>
+      <div id="itemsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="py-8 border-t border-gray-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-500">
+        © <span id="year"></span> کافه چینو — همه حقوق محفوظ است.
+      </p>
+      <div class="flex items-center gap-3">
+        <a href="https://www.instagram.com/aaahmadi.i" target="_blank" class="text-sm hover:text-primary flex items-center gap-1">
+          <i class="fa-brands fa-instagram text-lg"></i>
+          سازنده: @aaahmadi.i
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    // دادهٔ نمونه — بعداً می‌تونیم از JSON/پنل مدیریت لود کنیم
+    const sampleMenu = {
+      breakfast: [
+        { name: 'صبحانه کلاسیک', desc: 'تخم‌مرغ، پنیر، نان تازه', price: 185000, img: '' },
+        { name: 'پنکیک عسل', desc: 'سه لایه با شیره', price: 165000, img: '' },
+      ],
+      hot: [
+        { name: 'کاپوچینو', desc: 'اسپرسو + فوم شیر', price: 95000, img: '' },
+        { name: 'موکا', desc: 'شکلات + شیر + اسپرسو', price: 110000, img: '' },
+      ],
+      cold: [
+        { name: 'آیس لاته', desc: 'قهوه سرد با شیر', price: 115000, img: '' },
+        { name: 'آفوگاتو', desc: 'اسکوپ بستنی + اسپرسو', price: 120000, img: '' },
+      ],
+      smoothie: [
+        { name: 'اسموتی توت‌فرنگی', desc: 'تازه و فرِش', price: 130000, img: '' },
+        { name: 'اسموتی مانگو', desc: 'میوه‌ای و کرمی', price: 135000, img: '' },
+        {name: 'اسموتی آلبایو', desc:'ترش و ملس', price:155000,img: ''}
+      ],
+      drinks: [
+        { name: 'لیموناد تازه', desc: 'لیموی طبیعی', price: 90000, img: '' },
+        { name: 'موهیتو', desc: 'نعنا و لیمو', price: 110000, img: '' },
+      ],
+      appetizer: [
+        { name: 'سیب‌زمینی ویژه', desc: 'سس اختصاصی', price: 95000, img: '' },
+        { name: 'سالاد فصل', desc: 'سبک و سالم', price: 85000, img: '' },
+      ],
+      sandwich: [
+        { name: 'ساندویچ مرغ گریل', desc: 'نان تست تازه', price: 140000, img: '' },
+        { name: 'ساندویچ استیک', desc: 'سس قارچ', price: 185000, img: '' },
+      ],
+      main: [
+        { name: 'پاستا آلفردو', desc: 'سس خامه‌ای', price: 210000, img: '' },
+        { name: 'چیکن پارمسان', desc: 'پنیر و سس گوجه', price: 225000, img: '' },
+      ],
+      hookah: [
+        { name: 'دو سیب', desc: 'طعم کلاسیک', price: 170000, img: '' },
+        { name: 'نعنا', desc: 'خنک و دل‌انگیز', price: 175000, img: '' },
+      ],
+    };
+
+    const toMoney = n => new Intl.NumberFormat('fa-IR').format(n) + ' تومان';
+
+    function renderItems(catKey) {
+      const titleMap = {
+        breakfast: 'صبحانه', hot: 'قهوهٔ گرم', cold: 'قهوهٔ سرد', smoothie: 'اسموتی', drinks: 'نوشیدنی', appetizer: 'پیش‌غذا', sandwich: 'ساندویچ', main: 'غذای اصلی', hookah: 'قلیان'
+      };
+      const items = sampleMenu[catKey] || [];
+      document.getElementById('itemsTitle').textContent = titleMap[catKey] || 'آیتم‌ها';
+      document.getElementById('itemsCount').textContent = items.length ? `${items.length} آیتم` : '';
+      const grid = document.getElementById('itemsGrid');
+      grid.innerHTML = items.map(it => `
+        <article class="rounded-2xl border border-gray-200 p-5 hover:border-primary/50">
+          ${it.img ? `<img src="${it.img}" alt="${it.name}" class="w-full h-32 object-cover rounded-xl mb-3">` : ''}
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h4 class="font-bold">${it.name}</h4>
+              ${it.desc ? `<p class=\"text-sm text-gray-500 mt-1\">${it.desc}</p>` : ''}
+            </div>
+            <div class="font-extrabold text-primary whitespace-nowrap">${toMoney(it.price)}</div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function setActive(catKey) {
+      document.querySelectorAll('#catBar a').forEach(a => {
+        const isActive = a.dataset.cat === catKey;
+        a.classList.toggle('ring-2', isActive);
+        a.classList.toggle('ring-primary', isActive);
+        a.classList.toggle('bg-primary/5', isActive);
+      });
+    }
+
+    // Event listeners برای دسته‌ها
+    document.querySelectorAll('#catBar a').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const cat = a.dataset.cat;
+        setActive(cat);
+        renderItems(cat);
+      });
+    });
+
+    // مقدار پیش‌فرض هنگام بارگذاری
+    setActive('hot');
+    renderItems('hot');
+
+    // --- اتصال به پنل در آینده ---
+    // می‌تونیم به‌جای sampleMenu از مسیر /data/menu.json لود کنیم و بر اساس فیلد category فیلتر کنیم.
+    // fetch('/data/menu.json').then(r => r.json()).then(data => { /* ... */ })
+  </script>
+</body>
+</html>
