@@ -1,12 +1,22 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>پنل مدیریت</title>
   </head>
   <body>
-    <!-- فقط خود Decap CMS؛ هیچ init دستی و هیچ اسکریپت دیگه‌ای نذار -->
+    <!-- ویجت هویت نتلیفای (الزامی برای login/reset/signup) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- خود Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3.3.1/dist/decap-cms.js"></script>
+
+    <!-- اختیاری: بعد از login صفحه رفرش شود -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('login', () => window.location.reload());
+      }
+    </script>
   </body>
 </html>
