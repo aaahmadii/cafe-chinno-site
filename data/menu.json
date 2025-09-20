@@ -1,5 +1,12 @@
 {
   "items": [
-    { "category": "hot", "name": "کاپوچینو", "desc": "اسپرسو + فوم شیر", "price": 95000, "img": "" }
+    {
+      "category": "hookah",
+      "name": "قلیان دوسیب",
+      "desc": "",
+      "price": 350000,
+      "img": "",
+      "featured": true
+    }
   ]
 }
