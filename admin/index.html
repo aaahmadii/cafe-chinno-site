@@ -2,30 +2,17 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>پنل مدیریت | منو</title>
 
-  <!-- Netlify Identity: لازم برای invite / reset password -->
+  <!-- Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <!-- Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
-  <!-- UI پنل اینجا mount می‌شود -->
-
-  <script>
-    // اگر کاربر لاگین کرد، برگرد به /admin/
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', user => {
-        if (!user) {
-          window.netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    }
-  </script>
+  <!-- CMS خودش اینجا mount میشه -->
 </body>
 </html>
 
